@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Matrimony</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="title_add_photo">Photos are the first thing members look in your profile. Add multiple photos to get more matches</string>
+    <string name="title_drag_photo">Drag photos to reorder. First photo will be displayed as your profile photo</string>
+    <string name="add_photos">Add Photos</string>
+    <string name="delete_photo">Delete Photo</string>
+    <string name="delete_message">Members with multiple photos get better response. Do you still want to delete this photo?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="manage_photos">Manage Photos</string>
+    <string name="toast_max_limit">You have reached the maximum limit of 6 Photos</string>
+</resources>

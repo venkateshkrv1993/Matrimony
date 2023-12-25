@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.text.Html" />
+
+        <variable
+            name="item"
+            type="com.app.matrimony.ui.bottomsheet.ItemModel" />
+
+        <variable
+            name="clickAction"
+            type="com.app.matrimony.ui.bottomsheet.OnOptionSelection" />
+    </data>
+
+    <androidx.appcompat.widget.AppCompatButton xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/text"
+        startingIcon="@{item.res}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:drawablePadding="12dp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="5dp"
+        android:onClick="@{() -> clickAction.onOptionSelected(item.key)}"
+        android:paddingVertical="18dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="10dp"
+        android:text="@{Html.fromHtml(item.title)}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:drawableEndCompat="@drawable/ic_arrow_right"
+        tools:ignore="RtlSymmetry"
+        tools:text="Upload" />
+
+</layout>
