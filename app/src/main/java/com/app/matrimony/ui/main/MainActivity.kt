@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity(), OnClickAction {
             getString(R.string.delete_photo),
             getString(R.string.delete_message)
         ) {
-            if (it) {
+            if (!it) {
                 viewModel.removePhoto(item)
             }
         }

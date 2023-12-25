@@ -8,7 +8,11 @@
     <string name="delete_message">Members with multiple photos get better response. Do you still want to delete this photo?</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="upload_photo">Upload Photo</string>
     <string name="add_photo">Add Photo</string>
     <string name="manage_photos">Manage Photos</string>
     <string name="toast_max_limit">You have reached the maximum limit of 6 Photos</string>
+    <string name="message_permission_rationale">Photos are the first thing members see on your profile. So photo can be uploaded only after allowing permission</string>
 </resources>

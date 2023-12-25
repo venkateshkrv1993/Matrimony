@@ -36,4 +36,36 @@ object AlertUtils {
         }
     }
 
+    fun alertDialogTwoAction(
+        context: Context,
+        title: String,
+        msg: String,
+        textPositive: String,
+        textNegative: String,
+        callback: (Boolean) -> Unit
+    ) {
+        val dialog = Dialog(context)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        val binding = LayoutAlertBinding.inflate(LayoutInflater.from(context))
+        dialog.setContentView(binding.root)
+        binding.title = title
+        binding.message = msg
+        binding.tvPositive.text = textPositive
+        binding.tvNegative.text = textNegative
+        binding.tvPositive.setOnClickListener {
+            dialog.dismiss()
+            callback.invoke(true)
+        }
+        binding.tvNegative.setOnClickListener {
+            dialog.dismiss()
+            callback.invoke(false)
+        }
+        dialog.show()
+        dialog.window?.apply {
+            setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+        }
+    }
+
+
 }

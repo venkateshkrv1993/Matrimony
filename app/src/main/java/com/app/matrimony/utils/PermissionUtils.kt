@@ -10,10 +10,12 @@ import android.provider.MediaStore
 import androidx.activity.result.ActivityResultLauncher
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.app.matrimony.R
+import com.app.matrimony.utils.apputils.AlertUtils.alertDialogTwoAction
 
 object PermissionUtils {
 
-    fun checkAndRequestPermission(
+    private fun checkAndRequestPermission(
         activity: Activity,
         permission: String,
         resultLauncher: ActivityResultLauncher<String>,
@@ -28,11 +30,15 @@ object PermissionUtils {
             }
 
             ActivityCompat.shouldShowRequestPermissionRationale(activity, permission) -> {
-                // In an educational UI, explain to the user why your app requires this
-                // permission for a specific feature to behave as expected, and what
-                // features are disabled if it's declined. In this UI, include a
-                // "cancel" or "no thanks" button that lets the user continue
-                // using your app without granting the permission.
+                alertDialogTwoAction(
+                    activity,
+                    activity.getString(R.string.upload_photo),
+                    activity.getString(R.string.message_permission_rationale),
+                    activity.getString(R.string.ok),
+                    activity.getString(R.string.cancel)
+                ) {
+                    if (it) resultLauncher.launch(permission)
+                }
             }
 
             else -> {
